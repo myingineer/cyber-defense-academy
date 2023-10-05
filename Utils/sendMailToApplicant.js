@@ -18,7 +18,7 @@ const emailApplicant = async (option) => {
         html: `
             <div style="background-color: #f4f4f4; padding: 20px; height: fit-content;">
                 <div style="max-width: 600px; margin: 0 auto; background-color: white; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
-                    <div style="text-align: center; background-color:  #000F89; color: white; padding: 10px 0; border-radius: 10px 10px 0 0;">
+                    <div style="text-align: center; background-color: blue; color: white; padding: 10px 0; border-radius: 10px 10px 0 0;">
                         <h1>CYBER DEFENSE ACADEMY</h1>
                     </div>
                     <div style="padding: 20px;">
@@ -30,7 +30,7 @@ const emailApplicant = async (option) => {
                         <p>Thank you for Enrolling to be a part of our community.</p>
                         <p>Best regards,<br> CEO <br> CYBER DEFENSE ACADEMY</p>
                     </div>
-                    <div style="text-align: center; background-color:  #000F89; color: white; padding: 10px 0; border-radius: 0 0 10px 10px;">
+                    <div style="text-align: center; background-color:  blue; color: white; padding: 10px 0; border-radius: 0 0 10px 10px;">
                         <p>&copy; 2023 CYBER DEFENSE ACADEMY. All rights reserved.</p>
                     </div>
                 </div>
