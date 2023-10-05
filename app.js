@@ -1,10 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const applicationRoute = require('./Routes/applicantRoute');
 const CustomError = require('./Utils/customError');
 const globalErrorHandler = require('./Controllers/errorController');
 
 app.use(express.json());
+app.use(cors())
 app.use('/', applicationRoute);
 
 app.all('*', (req, res, next) => {
