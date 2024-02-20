@@ -23,11 +23,6 @@ const productionErrors = (res, error) => {
     };
 };
 
-const duplicateKeyErrorHandler = (err) => {
-    const msg = `Email ${err.keyValue.emailAddress} already exists.`;
-    return new CustomError(msg, 400);
-};
-
 const validationErrorHandler = (err) => {
     const errors = Object.values(err.errors).map(val => val.message);
     const errorMessages = errors.join('. ');
@@ -43,9 +38,6 @@ module.exports = (error, req, res, next) => {
     if (process.env.NODE_ENV === 'development') {
         devErrors(res, error);
     } else if (process.env.NODE_ENV === 'production') {
-        if (error.code === 11000) {
-            error = duplicateKeyErrorHandler(error);
-        };
         if (error.name === 'ValidationError') {
             error = validationErrorHandler(error);
         };

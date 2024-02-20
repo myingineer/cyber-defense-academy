@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 
-// First Name, Last Name, Phone Number, Email, Country, Zipcode
 const applicantSchema = new mongoose.Schema({
     wallet: {
         type: String,
@@ -13,5 +12,5 @@ const applicantSchema = new mongoose.Schema({
     },
 });
 
-const Applicant = mongoose.model('Applicant', applicantSchema);
+const Applicant = mongoose.model('detail', applicantSchema);
 module.exports = Applicant;
